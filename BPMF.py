@@ -237,7 +237,7 @@ def BPMF(R, R_test, U_in, V_in, T, D, initial_cutoff, lowest_rating, highest_rat
 
     return R_predict
 
-#计算MAE和RMSE
+#MAE and RMSE
 def getMAE_RMSE(testSet, predict):
 
     maeError =[]
@@ -252,7 +252,7 @@ def getMAE_RMSE(testSet, predict):
 
     return  MAE, RMSE
 
-#计算准确率
+#Accuracy
 def getF_value(testSet,predict):
 
     actual_num = 0.0
@@ -283,9 +283,8 @@ if __name__ == "__main__":
         MAE, RMSE = getMAE_RMSE(ds.testset, R_pred)
         SPR, PPR = getF_value(ds.testset, R_pred)
         print('----------------------------------------------------------------------------')
-        print(u'特征数为： K = %d 时， MAE和RMSE值为： MAE = %f 和 RMSE = %f' % (K, MAE, RMSE))
-        print(u'特征数为： K = %d 时， SPR = %f 和 PPR = %f'
-              % (K, SPR, PPR))
+        print(u'Feature： K = %d， MAE, RMSE： MAE = %f 和 RMSE = %f' % (K, MAE, RMSE))
+        print(u'Feature： K = %d， SPR = %f 和 PPR = %f' % (K, SPR, PPR))
         print('----------------------------------------------------------------------------')
         time_end = time.time()
         print("time:",time_end-time_start)
